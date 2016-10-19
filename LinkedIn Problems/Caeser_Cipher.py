@@ -8,6 +8,9 @@ s = raw_input().strip()
 k = int(raw_input().strip())
 data = ""
 
+# if k is greater than 26
+k = k % 26
+
 range1 = range(65, 91)
 range2 = range(97, 123)
 for char in s:
