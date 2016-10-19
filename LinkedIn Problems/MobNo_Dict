@@ -1,16 +1,13 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
 import sys
-n = int(raw_input().strip())
-data = {}
-lst = []
-for i in range(n):
-    val = raw_input().strip()
-    lst = val.split(" ")
-    data[lst[0]] = lst[1]
-    
-for query in sys.stdin:
-    query = query.strip()
-    if not query in data.keys():
-        print "Not found"
+a={}
+n=int(input())
+for ii in range(n):
+    name,phone=raw_input().split()
+    a[name]=phone
+lines = sys.stdin.readlines()
+for name in lines:
+    name=name.strip()
+    if name in a.keys():
+        print "%s=%s"%(name,a[name])
     else:
-        print query+"="+data[query]
+        print 'Not found'
